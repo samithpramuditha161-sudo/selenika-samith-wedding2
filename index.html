@@ -1,94 +1,141 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selenika & Samith Wedding</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7efe1">
+<title>Selenika & Samith | Wedding Invitation</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;min-height:100vh;display:flex;align-items:center;
- justify-content:center;background:#eee6d9;
- font-family:Georgia,serif;color:#725b43;padding:20px;
-}
-.container{text-align:center;width:100%;max-width:650px}
-h1{font-size:32px;font-weight:normal;color:#98764b}
-.subtitle{letter-spacing:4px;font-size:11px;margin-bottom:35px}
-.envelope{
- position:relative;width:100%;height:310px;
- perspective:1200px;margin:20px auto;
- background:#d9c5a3;box-shadow:0 12px 35px #8b765544;
-}
-.inside{
- position:absolute;inset:0;background:#fffaf0;
- display:flex;align-items:center;justify-content:center;
- flex-direction:column;padding:20px;
-}
-.inside h2{font-size:30px;font-weight:normal;color:#a27b49}
-.inside p{line-height:1.8;font-size:14px}
-.door{
- position:absolute;top:0;width:50%;height:100%;
- background:linear-gradient(135deg,#fffdf6,#e8d8bc);
- border:1px solid #c5a879;
- display:flex;align-items:center;justify-content:center;
- transition:transform 1.5s ease;
- backface-visibility:hidden;z-index:2;
-}
-.left{left:0;transform-origin:left}
-.right{right:0;transform-origin:right}
-.door:after{
- content:"";position:absolute;inset:12px;
- border:1px solid #c6a46c;
-}
-.door span{font-size:45px;color:#a88759;z-index:3}
-.seal{
- position:absolute;z-index:4;left:50%;top:50%;
- transform:translate(-50%,-50%);
- width:65px;height:65px;border-radius:50%;
- background:#a47c49;color:white;border:3px double #ead5a8;
- display:flex;align-items:center;justify-content:center;
- font-size:20px;transition:opacity .5s;
-}
-.open .left{transform:rotateY(-115deg)}
-.open .right{transform:rotateY(115deg)}
-.open .seal{opacity:0}
-button{
- background:#a47c49;color:white;border:0;padding:14px 30px;
- font-size:14px;letter-spacing:2px;border-radius:3px;
- cursor:pointer;margin-top:20px;
-}
-.note{font-size:12px;letter-spacing:2px;color:#927b5b}
+:root{--gold:#a87932;--deep:#68471f;--cream:#fff9ef;--ink:#594329;--line:#d9bd83}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#f7efe4;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button,input,textarea{font:inherit}
+.hero{min-height:100svh;display:grid;place-items:center;padding:28px 16px;background:radial-gradient(circle at 50% 30%,#fffdf7,#ead8b8)}
+.hero-inner{width:min(460px,100%);text-align:center}
+.kicker{letter-spacing:.25em;font-size:11px;color:#94703e}
+h1{font-weight:400;font-size:clamp(34px,9vw,54px);font-style:italic;color:#8b5d25;margin:15px 0}
+.lead{font-size:12px;letter-spacing:.13em;line-height:1.9}
+.gate{position:relative;width:min(390px,92vw);aspect-ratio: .78;margin:28px auto 18px;perspective:1400px;box-shadow:0 18px 45px #71552b35;background:#f9edda;overflow:visible}
+.gate .inside{position:absolute;inset:0;background:#fff9ef;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.gate .inside img{width:100%;height:100%;object-fit:contain}
+.flap{position:absolute;inset:0 50% 0 0;z-index:3;transform-origin:left center;transition:transform 1.5s cubic-bezier(.2,.75,.2,1);backface-visibility:hidden;background:#f8edda}
+.flap.right{inset:0 0 0 50%;transform-origin:right center}
+.flap img{width:200%;height:100%;object-fit:cover;max-width:none}
+.flap.left img{object-position:left center}
+.flap.right img{transform:translateX(-50%);object-position:right center}
+.gate.open .flap.left{transform:rotateY(-115deg)}
+.gate.open .flap.right{transform:rotateY(115deg)}
+.seal{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#d5a64f,#87551e);border:4px double #f9e6b7;color:#fff8e8;font-size:20px;box-shadow:0 4px 15px #68471f55;transition:opacity .3s}
+.gate.open .seal{opacity:0;pointer-events:none}
+.btn{display:inline-block;border:1px solid var(--gold);background:var(--gold);color:white;padding:13px 25px;letter-spacing:.13em;text-decoration:none;font-size:12px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--deep)}
+.scrollhint{font-size:11px;letter-spacing:.18em;color:#9c815b;margin-top:20px}
+section{padding:76px 20px;text-align:center;position:relative}
+section:nth-of-type(even){background:#fffaf2}
+.section-inner{width:min(760px,100%);margin:auto}
+.ornament{color:var(--gold);letter-spacing:.4em;font-size:20px}
+h2{font-weight:400;font-size:clamp(28px,7vw,42px);font-style:italic;color:#93652d;margin:12px 0 24px}
+.names{font-size:clamp(34px,8vw,54px);font-style:italic;color:#8b5d25}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin:28px 0}
+.detail{padding:24px 15px;border:1px solid #e5d2ad;background:#fffdf8}
+.detail strong{display:block;color:#986a2f;letter-spacing:.12em;font-size:12px;margin-bottom:10px}
+.detail p{margin:4px 0;line-height:1.7}
+.invite-image{width:min(440px,100%);height:auto;box-shadow:0 12px 35px #76582b24;border:7px solid #fffaf2}
+.location{line-height:1.9}
+.rsvp{max-width:520px;margin:25px auto 0;text-align:left;background:#fffdf8;padding:24px;border:1px solid #e4d0a8}
+label{display:block;font-size:13px;margin:14px 0 6px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #d9c49f;background:#fffaf2;color:var(--ink);border-radius:2px}
+textarea{min-height:90px;resize:vertical}
+.rsvp .btn{width:100%;margin-top:18px}
+footer{padding:36px 16px;text-align:center;background:#efe0c5;color:#896b42;font-style:italic}
+.admin{position:fixed;right:12px;bottom:12px;z-index:20}
+.admin button{background:#76552e;color:white;border:0;border-radius:30px;padding:10px 14px;font-size:11px}
+#editor{display:none;position:fixed;inset:0;z-index:30;background:#fffaf2;overflow:auto;padding:24px}
+#editor .panel{max-width:520px;margin:25px auto}
+#editor h2{font-style:normal}
+#editor .row{margin:12px 0}
+#editor .btn{margin:8px 6px 0 0}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="container">
- <div class="subtitle">TOGETHER WITH THEIR FAMILIES</div>
- <h1>Selenika & Samith</h1>
- <p class="note">CORDIALLY INVITE YOU TO CELEBRATE THEIR WEDDING</p>
-
- <div class="envelope" id="envelope">
-  <div class="inside">
-   <p>WITH LOVE AND JOY</p>
-   <h2>Selenika & Samith</h2>
-   <p>18 December 2026</p>
-   <p>Poruwa Ceremony · 10:00 AM</p>
-   <p>The Rivers Hotel, Kaduwela</p>
-   <p>We would be delighted to have you with us.</p>
+<header class="hero">
+ <div class="hero-inner">
+  <div class="kicker">TOGETHER WITH THEIR FAMILIES</div>
+  <h1 id="heroNames">Selenika & Samith</h1>
+  <div class="lead">JOYFULLY INVITE YOU TO CELEBRATE THEIR WEDDING</div>
+  <div class="gate" id="gate" aria-label="Wedding invitation envelope">
+   <div class="inside"><img src="assets/invitation.jpg" alt="Selenika and Samith wedding invitation card"></div>
+   <div class="flap left"><img src="assets/cover.jpg" alt=""></div>
+   <div class="flap right"><img src="assets/cover.jpg" alt=""></div>
+   <div class="seal">S ♥ S</div>
   </div>
-  <div class="door left"><span>❀</span></div>
-  <div class="door right"><span>❀</span></div>
-  <div class="seal">S ♥ S</div>
+  <button class="btn" id="openBtn" onclick="openCard()">OPEN INVITATION</button>
+  <div class="scrollhint">TAP THE ENVELOPE TO OPEN · SCROLL TO EXPLORE</div>
  </div>
-
- <button onclick="openInvitation()">OPEN INVITATION</button>
- <p class="note">TAP TO OPEN OUR WEDDING INVITATION</p>
+</header>
+<section id="welcome">
+ <div class="section-inner">
+  <div class="ornament">✦ ❦ ✦</div>
+  <div class="names" id="names">Selenika & Samith</div>
+  <h2>Joyfully invite you</h2>
+  <p>to celebrate the beginning of their new journey together</p>
+ </div>
+</section>
+<section id="details">
+ <div class="section-inner">
+  <div class="ornament">✦</div><h2>Wedding Details</h2>
+  <div class="details">
+   <div class="detail"><strong>THE DATE</strong><p id="dateText">Friday, 18 December 2026</p></div>
+   <div class="detail"><strong>PORUWA CEREMONY</strong><p id="timeText">10:00 AM</p></div>
+   <div class="detail"><strong>THE VENUE</strong><p id="venueText">The River Edge Hotel</p><p id="cityText">Kaduwela, Sri Lanka</p></div>
+  </div>
+  <a class="btn alt" id="mapLink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+River+Edge+Hotel+Kaduwela">GET DIRECTIONS</a>
+ </div>
+</section>
+<section id="card">
+ <div class="section-inner">
+  <div class="ornament">❦</div><h2>Our Invitation</h2>
+  <img class="invite-image" src="assets/invitation.jpg" alt="Wedding invitation details">
+  <p style="margin-top:25px;font-style:italic">Reception to follow</p>
+ </div>
+</section>
+<section id="rsvp">
+ <div class="section-inner">
+  <div class="ornament">✦ ❦ ✦</div><h2>Kindly RSVP</h2>
+  <p>Please let us know if you will be joining us.</p>
+  <form class="rsvp" onsubmit="sendRSVP(event)">
+   <label for="guest">Your name</label><input id="guest" required placeholder="Enter your name">
+   <label for="attendance">Will you attend?</label><select id="attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select>
+   <label for="count">Number of guests</label><select id="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+   <label for="note">Message (optional)</label><textarea id="note" placeholder="Write a message..."></textarea>
+   <button class="btn" type="submit">SEND RSVP VIA WHATSAPP</button>
+   <p style="font-size:11px;line-height:1.6">Your RSVP will open WhatsApp with a prepared message to the couple.</p>
+  </form>
+ </div>
+</section>
+<footer>With love, Selenika & Samith · 18 December 2026</footer>
+<div class="admin"><button onclick="showEditor()">EDIT DETAILS</button></div>
+<div id="editor">
+ <div class="panel">
+  <h2>Edit invitation details</h2>
+  <p>Changes are saved on this device only. To update the public website for everyone, the website files must also be updated on GitHub.</p>
+  <div class="row"><label>Couple names</label><input id="eNames" value="Selenika & Samith"></div>
+  <div class="row"><label>Date</label><input id="eDate" value="Friday, 18 December 2026"></div>
+  <div class="row"><label>Poruwa ceremony time</label><input id="eTime" value="10:00 AM"></div>
+  <div class="row"><label>Venue</label><input id="eVenue" value="The River Edge Hotel"></div>
+  <div class="row"><label>City / country</label><input id="eCity" value="Kaduwela, Sri Lanka"></div>
+  <button class="btn" onclick="saveEditor()">SAVE ON THIS DEVICE</button>
+  <button class="btn alt" onclick="hideEditor()">CLOSE</button>
+ </div>
 </div>
-
 <script>
-function openInvitation(){
- document.getElementById('envelope').classList.toggle('open');
-}
+const WHATSAPP_NUMBER="94750778182";
+function openCard(){document.getElementById('gate').classList.toggle('open');document.getElementById('openBtn').textContent=document.getElementById('gate').classList.contains('open')?'CLOSE ENVELOPE':'OPEN INVITATION';}
+document.getElementById('gate').addEventListener('click',openCard);
+function sendRSVP(e){e.preventDefault();const msg=`Wedding RSVP - Selenika & Samith\nName: ${guest.value}\nAttendance: ${attendance.value}\nGuests: ${count.value}\nMessage: ${note.value}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');}
+function showEditor(){document.getElementById('editor').style.display='block'}
+function hideEditor(){document.getElementById('editor').style.display='none'}
+function saveEditor(){const pairs=[['heroNames','eNames'],['names','eNames'],['dateText','eDate'],['timeText','eTime'],['venueText','eVenue'],['cityText','eCity']];pairs.forEach(([a,b])=>document.getElementById(a).textContent=document.getElementById(b).value);hideEditor();}
 </script>
-</body>
-</html>
+</body></html>
