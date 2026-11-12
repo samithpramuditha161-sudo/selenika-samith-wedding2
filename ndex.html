@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selenika & Samith Wedding</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;display:flex;align-items:center;
+ justify-content:center;background:#eee6d9;
+ font-family:Georgia,serif;color:#725b43;padding:20px;
+}
+.container{text-align:center;width:100%;max-width:650px}
+h1{font-size:32px;font-weight:normal;color:#98764b}
+.subtitle{letter-spacing:4px;font-size:11px;margin-bottom:35px}
+.envelope{
+ position:relative;width:100%;height:310px;
+ perspective:1200px;margin:20px auto;
+ background:#d9c5a3;box-shadow:0 12px 35px #8b765544;
+}
+.inside{
+ position:absolute;inset:0;background:#fffaf0;
+ display:flex;align-items:center;justify-content:center;
+ flex-direction:column;padding:20px;
+}
+.inside h2{font-size:30px;font-weight:normal;color:#a27b49}
+.inside p{line-height:1.8;font-size:14px}
+.door{
+ position:absolute;top:0;width:50%;height:100%;
+ background:linear-gradient(135deg,#fffdf6,#e8d8bc);
+ border:1px solid #c5a879;
+ display:flex;align-items:center;justify-content:center;
+ transition:transform 1.5s ease;
+ backface-visibility:hidden;z-index:2;
+}
+.left{left:0;transform-origin:left}
+.right{right:0;transform-origin:right}
+.door:after{
+ content:"";position:absolute;inset:12px;
+ border:1px solid #c6a46c;
+}
+.door span{font-size:45px;color:#a88759;z-index:3}
+.seal{
+ position:absolute;z-index:4;left:50%;top:50%;
+ transform:translate(-50%,-50%);
+ width:65px;height:65px;border-radius:50%;
+ background:#a47c49;color:white;border:3px double #ead5a8;
+ display:flex;align-items:center;justify-content:center;
+ font-size:20px;transition:opacity .5s;
+}
+.open .left{transform:rotateY(-115deg)}
+.open .right{transform:rotateY(115deg)}
+.open .seal{opacity:0}
+button{
+ background:#a47c49;color:white;border:0;padding:14px 30px;
+ font-size:14px;letter-spacing:2px;border-radius:3px;
+ cursor:pointer;margin-top:20px;
+}
+.note{font-size:12px;letter-spacing:2px;color:#927b5b}
+</style>
+</head>
+<body>
+<div class="container">
+ <div class="subtitle">TOGETHER WITH THEIR FAMILIES</div>
+ <h1>Selenika & Samith</h1>
+ <p class="note">CORDIALLY INVITE YOU TO CELEBRATE THEIR WEDDING</p>
+
+ <div class="envelope" id="envelope">
+  <div class="inside">
+   <p>WITH LOVE AND JOY</p>
+   <h2>Selenika & Samith</h2>
+   <p>18 December 2026</p>
+   <p>Poruwa Ceremony · 10:00 AM</p>
+   <p>The Rivers Hotel, Kaduwela</p>
+   <p>We would be delighted to have you with us.</p>
+  </div>
+  <div class="door left"><span>❀</span></div>
+  <div class="door right"><span>❀</span></div>
+  <div class="seal">S ♥ S</div>
+ </div>
+
+ <button onclick="openInvitation()">OPEN INVITATION</button>
+ <p class="note">TAP TO OPEN OUR WEDDING INVITATION</p>
+</div>
+
+<script>
+function openInvitation(){
+ document.getElementById('envelope').classList.toggle('open');
+}
+</script>
+</body>
+</html>
