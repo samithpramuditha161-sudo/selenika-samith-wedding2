@@ -1,30 +1,104 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Selenika & Samith Wedding</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7efdf">
+<title>Selenika & Samith — Wedding Invitation</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f8f1e6;color:#65513a;font-family:Georgia,'Times New Roman',serif}
-.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px 16px;background:linear-gradient(135deg,#fffdf8,#eee0c9)}
-.cover-wrap{width:min(440px,92vw);text-align:center}.cover{width:100%;height:auto;display:block;box-shadow:0 18px 55px #6e553322;border:1px solid #d2b77f}
-.open{margin:22px auto 0;padding:13px 30px;border:1px solid #b9975c;background:#b9975c;color:white;border-radius:30px;letter-spacing:.16em;font:11px Arial,sans-serif;text-transform:uppercase;cursor:pointer}
-.hint{font:12px Arial,sans-serif;color:#927d5d;margin-top:12px}
-main{display:none}main.show{display:block}.section{padding:76px 20px;text-align:center}.cream{background:#fffaf2}.sand{background:#f1e5d2}.inner{max-width:760px;margin:auto}.small{font:10px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#b08c50}.orn{color:#bd9a60;font-size:26px;margin:18px}h1,h2{font-weight:400;font-style:italic;color:#8b6b3f}h2{font-size:clamp(34px,7vw,48px);margin:12px 0}.couple{font-size:clamp(38px,8vw,60px);font-style:italic;color:#927346;margin:20px 0}.copy{font-size:17px;line-height:1.9;color:#78684f;max-width:590px;margin:20px auto}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.item{padding:24px 12px;border:1px solid #d8c49f;background:#fffdf8}.item b{display:block;font:10px Arial,sans-serif;letter-spacing:.18em;color:#b08c50;margin-bottom:12px}.item span{font-size:17px;line-height:1.6}.venue{max-width:570px;margin:28px auto;padding:38px 20px;border:1px solid #bd9a60;background:#fffdf8;outline:1px solid #d8c49f;outline-offset:6px}.place{font-size:23px;line-height:1.6;color:#80633e}.btn{display:inline-block;margin-top:20px;padding:13px 27px;border-radius:30px;background:#ad8b54;color:white;text-decoration:none;font:11px Arial,sans-serif;letter-spacing:.15em}.footer{text-align:center;padding:32px;color:#9b8667;font-style:italic}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.section{padding:60px 18px}}
-</style></head><body>
-<section class="hero"><div class="cover-wrap">
-<img class="cover" src="assets/cover.png" alt="Selenika and Samith ivory rose and champagne gold gatefold wedding invitation">
-<button class="open" id="open">Open Invitation</button><div class="hint">Touch to view wedding details</div>
-</div></section>
-<main id="details">
-<section class="section cream"><div class="inner"><div class="small">Together with our families</div><div class="orn">❦</div><h2>Joyfully invite you to celebrate</h2><div class="couple">Selenika & Samith</div><p class="copy">We would be delighted to have you join us as we begin our new journey together. Your presence will make our day even more special.</p><div class="orn">♡</div></div></section>
-<section class="section sand"><div class="inner"><div class="small">Please save the date</div><h2>Wedding Celebration</h2><div class="orn">❦</div><div class="grid">
-<div class="item"><b>DATE</b><span>Friday<br>18 December 2026</span></div>
-<div class="item"><b>PORUWA CEREMONY</b><span>10:00 AM</span></div>
-<div class="item"><b>CELEBRATION</b><span>With family & friends</span></div>
-</div></div></section>
-<section class="section cream"><div class="inner"><div class="small">We look forward to welcoming you</div><h2>The Venue</h2><div class="orn">❀</div><div class="venue"><div class="small">Wedding Venue</div><p class="place"><strong>The River Edge Hotel</strong><br>Kaduwela, Sri Lanka</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+River+Edge+Hotel+Kaduwela">VIEW LOCATION</a></div></div></section>
-<section class="section sand"><div class="inner"><div class="small">Kindly respond</div><h2>RSVP</h2><div class="orn">♡</div><p class="copy">Please confirm your attendance through WhatsApp. We can't wait to celebrate with you!</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/94750778182?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20Selenika%20%26%20Samith%27s%20wedding%20on%2018%20December%202026.">CONFIRM VIA WHATSAPP</a></div></section>
-<div class="footer">With love, Selenika & Samith · 18 December 2026</div>
-</main>
+:root{--gold:#b88735;--deep:#79501d;--paper:#fffaf0;--ink:#68451f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f7efdf;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button{font:inherit}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:22px 12px 34px;background:radial-gradient(ellipse at center,#fffdf7 0,#f6ead2 65%,#e9d5ad 100%);overflow:hidden}
+.stage{width:min(92vw,480px);aspect-ratio:2/3;position:relative;perspective:1800px;filter:drop-shadow(0 20px 24px #6b4b1c42)}
+.door{position:absolute;top:0;width:50%;height:100%;overflow:hidden;z-index:3;transition:transform 1.65s cubic-bezier(.7,0,.2,1),opacity .8s ease;backface-visibility:hidden}
+.door img{width:100%;height:100%;object-fit:fill;display:block}
+.door.left{left:0;transform-origin:left center}
+.door.left img{object-position:left center}
+.door.right{right:0;transform-origin:right center}
+.door.right img{transform:none}
+.ribbon{position:absolute;inset:43% 0 auto;width:100%;height:15.7%;object-fit:fill;z-index:5;transition:transform .85s ease,opacity .65s ease}
+.seal-hit{position:absolute;z-index:8;left:50%;top:50.8%;transform:translate(-50%,-50%);width:22%;height:12%;border:0;background:transparent;border-radius:50%;cursor:pointer}
+.open-hint{position:absolute;z-index:10;left:50%;bottom:-44px;transform:translateX(-50%);white-space:nowrap;color:#805a28;font-size:14px;letter-spacing:.08em}
+.stage.open .ribbon{transform:translateY(85px) rotate(5deg);opacity:0}
+.stage.open .door.left{transform:rotateY(-112deg);opacity:.16}
+.stage.open .door.right{transform:rotateY(112deg);opacity:.16}
+.stage.open .seal-hit{pointer-events:none}
+.stage.open .open-hint{opacity:0}
+.inside{display:none;position:relative;min-height:100vh;padding:70px 18px 60px;background:linear-gradient(#fffaf0ee,#fffaf0ee),url('assets/original-invitation.png') center/cover fixed}
+.inside.show{display:block;animation:fadeIn .9s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.flower-side{position:absolute;top:0;bottom:0;width:min(22vw,210px);background-size:100% 100%;background-repeat:no-repeat;opacity:.52;pointer-events:none}
+.flower-side.left{left:0;background-image:url('assets/floral-left.jpg')}
+.flower-side.right{right:0;background-image:url('assets/floral-right.jpg')}
+.content{position:relative;z-index:1;width:min(100%,720px);margin:auto;padding:34px clamp(20px,6vw,60px);background:#fffaf0eF;border:1px solid #d7b66f;outline:1px solid #d7b66f;outline-offset:6px;box-shadow:0 12px 40px #7a59201a;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.24em;color:#98702f;text-transform:uppercase}
+.names{font-family:'Brush Script MT','Segoe Script',cursive;font-size:clamp(48px,10vw,78px);line-height:1.05;color:#8a5d22;margin:24px 0 8px;font-weight:400}
+.amp{font-size:26px;margin:0;color:#b18439}
+.invite{letter-spacing:.18em;font-size:13px;line-height:2;color:#85602c;margin:20px 0}
+.ornament{color:#b58a3e;letter-spacing:.4em;margin:22px 0}
+.date{display:flex;align-items:center;justify-content:center;gap:18px;margin:24px auto 8px;color:#7b5422}
+.date .day{font-size:56px;line-height:1}
+.date .side{font-size:12px;letter-spacing:.2em}
+.date-sub{font-family:'Brush Script MT','Segoe Script',cursive;font-size:27px;color:#9a6d2e}
+.details{display:grid;grid-template-columns:1fr;gap:18px;margin:30px 0}
+.detail{padding:18px 12px;border-top:1px solid #d9bd83;border-bottom:1px solid #d9bd83}
+.detail h3{font-size:14px;letter-spacing:.16em;font-weight:normal;color:#8b6329;margin:0 0 8px}
+.detail p{margin:5px 0;font-size:18px;color:#65451f}
+.note{font-family:'Brush Script MT','Segoe Script',cursive;font-size:25px;color:#956a2e;margin:25px 0}
+.rsvp{display:inline-block;margin:12px auto 0;padding:13px 24px;border:1px solid #b68a3c;border-radius:2px;color:#77521f;text-decoration:none;letter-spacing:.1em;background:#fff9ec}
+.rsvp:active{background:#f2e3c5}
+.map{color:#8b6329;text-decoration:underline;text-underline-offset:4px}
+.footer{font-size:11px;letter-spacing:.14em;color:#9c7b48;margin-top:30px}
+@media(max-width:520px){.hero{padding-bottom:54px}.stage{width:min(94vw,410px)}.inside{padding:48px 12px}.flower-side{width:17vw;opacity:.38}.content{padding:28px 18px}.date{gap:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.door,.ribbon{transition:none}}
+</style>
+</head>
+<body>
+<section class="hero" id="top">
+  <div class="stage" id="stage" aria-label="Wedding invitation envelope">
+    <div class="door left"><img src="assets/left-door.jpg" alt=""></div>
+    <div class="door right"><img src="assets/right-door.jpg" alt=""></div>
+    <img class="ribbon" src="assets/gold-ribbon-seal.png" alt="">
+    <button class="seal-hit" id="openInvite" aria-label="Open wedding invitation"></button>
+    <div class="open-hint">TAP THE GOLD SEAL TO OPEN</div>
+  </div>
+</section>
+
+<section class="inside" id="inside">
+  <div class="flower-side left"></div><div class="flower-side right"></div>
+  <main class="content">
+    <div class="eyebrow">Together with their families</div>
+    <div class="names">Selenika</div>
+    <div class="amp">&amp;</div>
+    <div class="names" style="margin-top:8px">Samith</div>
+    <div class="invite">JOYFULLY INVITE YOU TO<br>CELEBRATE THEIR WEDDING</div>
+    <div class="ornament">────── ♥ ──────</div>
+    <div class="date"><span class="side">FRIDAY</span><span class="day">18</span><span class="side">2026</span></div>
+    <div class="date-sub">th December</div>
+    <div class="details">
+      <div class="detail"><h3>PORUWA CEREMONY</h3><p>10:00 AM</p></div>
+      <div class="detail"><h3>VENUE</h3><p>The River Edge Hotel</p><p>Kaduwela, Sri Lanka</p><p><a class="map" href="https://www.google.com/maps/search/?api=1&query=The+River+Edge+Hotel+Kaduwela+Sri+Lanka" target="_blank" rel="noopener">View Location</a></p></div>
+    </div>
+    <div class="note">We would be honoured by your presence</div>
+    <div class="ornament">────── ♥ ──────</div>
+    <a class="rsvp" href="https://wa.me/94750778182?text=Hello%2C%20we%20would%20like%20to%20RSVP%20for%20Selenika%20%26%20Samith%27s%20wedding." target="_blank" rel="noopener">RSVP ON WHATSAPP</a>
+    <div class="footer">WITH LOVE · SELENIKA &amp; SAMITH · 18 DECEMBER 2026</div>
+  </main>
+</section>
 <script>
-document.getElementById('open').addEventListener('click',()=>{const m=document.getElementById('details');m.classList.add('show');setTimeout(()=>m.scrollIntoView({behavior:'smooth'}),100)});
-</script></body></html>
+const stage=document.getElementById('stage');
+const inside=document.getElementById('inside');
+document.getElementById('openInvite').addEventListener('click',()=>{
+  if(stage.classList.contains('open')) return;
+  stage.classList.add('open');
+  window.setTimeout(()=>{
+    inside.classList.add('show');
+    inside.scrollIntoView({behavior:'smooth',block:'start'});
+  },1250);
+});
+</script>
+</body>
+</html>
