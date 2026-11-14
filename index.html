@@ -1,104 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7efdf">
-<title>Selenika & Samith — Wedding Invitation</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#eee5d5"><title>Selenika &amp; Samith — Wedding Invitation</title>
 <style>
-:root{--gold:#b88735;--deep:#79501d;--paper:#fffaf0;--ink:#68451f}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#f7efdf;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
-button{font:inherit}
-.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:22px 12px 34px;background:radial-gradient(ellipse at center,#fffdf7 0,#f6ead2 65%,#e9d5ad 100%);overflow:hidden}
-.stage{width:min(92vw,480px);aspect-ratio:2/3;position:relative;perspective:1800px;filter:drop-shadow(0 20px 24px #6b4b1c42)}
-.door{position:absolute;top:0;width:50%;height:100%;overflow:hidden;z-index:3;transition:transform 1.65s cubic-bezier(.7,0,.2,1),opacity .8s ease;backface-visibility:hidden}
-.door img{width:100%;height:100%;object-fit:fill;display:block}
-.door.left{left:0;transform-origin:left center}
-.door.left img{object-position:left center}
-.door.right{right:0;transform-origin:right center}
-.door.right img{transform:none}
-.ribbon{position:absolute;inset:43% 0 auto;width:100%;height:15.7%;object-fit:fill;z-index:5;transition:transform .85s ease,opacity .65s ease}
-.seal-hit{position:absolute;z-index:8;left:50%;top:50.8%;transform:translate(-50%,-50%);width:22%;height:12%;border:0;background:transparent;border-radius:50%;cursor:pointer}
-.open-hint{position:absolute;z-index:10;left:50%;bottom:-44px;transform:translateX(-50%);white-space:nowrap;color:#805a28;font-size:14px;letter-spacing:.08em}
-.stage.open .ribbon{transform:translateY(85px) rotate(5deg);opacity:0}
-.stage.open .door.left{transform:rotateY(-112deg);opacity:.16}
-.stage.open .door.right{transform:rotateY(112deg);opacity:.16}
-.stage.open .seal-hit{pointer-events:none}
-.stage.open .open-hint{opacity:0}
-.inside{display:none;position:relative;min-height:100vh;padding:70px 18px 60px;background:linear-gradient(#fffaf0ee,#fffaf0ee),url('assets/original-invitation.png') center/cover fixed}
-.inside.show{display:block;animation:fadeIn .9s ease both}
-@keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.flower-side{position:absolute;top:0;bottom:0;width:min(22vw,210px);background-size:100% 100%;background-repeat:no-repeat;opacity:.52;pointer-events:none}
-.flower-side.left{left:0;background-image:url('assets/floral-left.jpg')}
-.flower-side.right{right:0;background-image:url('assets/floral-right.jpg')}
-.content{position:relative;z-index:1;width:min(100%,720px);margin:auto;padding:34px clamp(20px,6vw,60px);background:#fffaf0eF;border:1px solid #d7b66f;outline:1px solid #d7b66f;outline-offset:6px;box-shadow:0 12px 40px #7a59201a;text-align:center}
-.eyebrow{font-size:12px;letter-spacing:.24em;color:#98702f;text-transform:uppercase}
-.names{font-family:'Brush Script MT','Segoe Script',cursive;font-size:clamp(48px,10vw,78px);line-height:1.05;color:#8a5d22;margin:24px 0 8px;font-weight:400}
-.amp{font-size:26px;margin:0;color:#b18439}
-.invite{letter-spacing:.18em;font-size:13px;line-height:2;color:#85602c;margin:20px 0}
-.ornament{color:#b58a3e;letter-spacing:.4em;margin:22px 0}
-.date{display:flex;align-items:center;justify-content:center;gap:18px;margin:24px auto 8px;color:#7b5422}
-.date .day{font-size:56px;line-height:1}
-.date .side{font-size:12px;letter-spacing:.2em}
-.date-sub{font-family:'Brush Script MT','Segoe Script',cursive;font-size:27px;color:#9a6d2e}
-.details{display:grid;grid-template-columns:1fr;gap:18px;margin:30px 0}
-.detail{padding:18px 12px;border-top:1px solid #d9bd83;border-bottom:1px solid #d9bd83}
-.detail h3{font-size:14px;letter-spacing:.16em;font-weight:normal;color:#8b6329;margin:0 0 8px}
-.detail p{margin:5px 0;font-size:18px;color:#65451f}
-.note{font-family:'Brush Script MT','Segoe Script',cursive;font-size:25px;color:#956a2e;margin:25px 0}
-.rsvp{display:inline-block;margin:12px auto 0;padding:13px 24px;border:1px solid #b68a3c;border-radius:2px;color:#77521f;text-decoration:none;letter-spacing:.1em;background:#fff9ec}
-.rsvp:active{background:#f2e3c5}
-.map{color:#8b6329;text-decoration:underline;text-underline-offset:4px}
-.footer{font-size:11px;letter-spacing:.14em;color:#9c7b48;margin-top:30px}
-@media(max-width:520px){.hero{padding-bottom:54px}.stage{width:min(94vw,410px)}.inside{padding:48px 12px}.flower-side{width:17vw;opacity:.38}.content{padding:28px 18px}.date{gap:12px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.door,.ribbon{transition:none}}
+:root{--gold:#b99553;--paper:#f6f0e5;--ink:#70572f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eee6d8;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+#opening{min-height:100svh;display:grid;place-items:center;padding:22px 12px;overflow:hidden;background:radial-gradient(ellipse at center,#fffaf0 0,#eee4d2 72%,#dfd0b8 100%)}
+.scene{width:min(94vw,520px);height:min(88svh,790px);min-height:480px;position:relative;perspective:1600px;filter:drop-shadow(0 18px 24px #6f56352b)}
+.cover{position:absolute;inset:0;overflow:hidden;border:1px solid #c6a66a;border-radius:4px;background:#f4ecdc;transform-style:preserve-3d}
+.door{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;z-index:3;transform-style:preserve-3d;backface-visibility:hidden;transition:transform 1.45s cubic-bezier(.2,.72,.18,1);will-change:transform}
+.door img{width:100%;height:100%;display:block;object-fit:cover}
+.door.left{left:0;transform-origin:left center;border-right:1px solid #c4a46b}
+.door.right{right:0;transform-origin:right center;border-left:1px solid #c4a46b}
+.ribbon{position:absolute;z-index:5;left:0;top:50%;width:100%;height:auto;max-height:36%;object-fit:contain;transform:translateY(-50%);transition:transform .8s ease,opacity .65s ease;pointer-events:none}
+.seal-hit{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(92px,25vw,132px);height:clamp(92px,25vw,132px);border:0;border-radius:50%;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.seal-hit:focus-visible{outline:2px solid #a77e3c;outline-offset:5px}
+.hint{position:absolute;z-index:9;left:0;right:0;bottom:18px;text-align:center;font-size:12px;letter-spacing:2px;color:#80643b;text-shadow:0 1px #fff8;pointer-events:none}
+.scene.opening .ribbon{transform:translate(130%,-50%) rotate(8deg);opacity:0}
+.scene.opening .door.left{transform:rotateY(-108deg)}.scene.opening .door.right{transform:rotateY(108deg)}
+.scene.opening .seal-hit,.scene.opening .hint{opacity:0;pointer-events:none;transition:opacity .25s}
+#invitation{display:none;min-height:100svh;padding:42px 18px 60px;position:relative;background:linear-gradient(#f8f3e9,#eee4d3)}
+#invitation.visible{display:block;animation:fadein .9s ease both}@keyframes fadein{from{opacity:0}to{opacity:1}}
+.invite-card{width:min(100%,650px);margin:auto;position:relative;min-height:760px;padding:60px 34px 48px;text-align:center;background:rgba(255,252,245,.86);border:1px solid #c5a56a;box-shadow:0 12px 36px #70572f18;overflow:hidden}
+.invite-card:before{content:'';position:absolute;inset:9px;border:1px solid #d5bd8e;pointer-events:none}
+.flower{position:absolute;width:clamp(105px,27%,190px);height:100%;top:0;object-fit:cover;opacity:.92;pointer-events:none}.flower.left{left:0;object-position:left center}.flower.right{right:0;object-position:right center}
+.copy{position:relative;z-index:2;max-width:430px;margin:auto;text-shadow:0 1px #fff8}.eyebrow{font-size:12px;letter-spacing:3px;margin:10px 0 30px}.names{font-size:clamp(38px,9vw,64px);font-style:italic;line-height:1.12;color:#a17b3e;margin:22px 0}.amp{font-size:26px;margin:8px}.sub{font-size:13px;letter-spacing:2px;line-height:1.8;margin:25px 0}.date{display:flex;align-items:center;justify-content:center;gap:18px;margin:32px 0 8px;letter-spacing:2px}.date strong{font-size:54px;font-weight:400}.month{font-size:24px;font-style:italic;margin:0 0 30px}.detail{font-size:14px;letter-spacing:1.5px;line-height:1.9;margin:24px 0}.detail strong{font-size:17px;font-weight:normal}.rsvp{display:inline-block;margin-top:18px;padding:13px 26px;border:1px solid #b99553;color:#765b31;text-decoration:none;letter-spacing:2px;background:#fffaf1}
+@media(max-width:420px){.scene{min-height:490px;height:82svh}.invite-card{padding:48px 18px 38px;min-height:720px}.copy{max-width:330px}.eyebrow{font-size:10px}.sub,.detail{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.door,.ribbon{transition-duration:.01ms!important;scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<section class="hero" id="top">
-  <div class="stage" id="stage" aria-label="Wedding invitation envelope">
-    <div class="door left"><img src="assets/left-door.jpg" alt=""></div>
-    <div class="door right"><img src="assets/right-door.jpg" alt=""></div>
-    <img class="ribbon" src="assets/gold-ribbon-seal.png" alt="">
-    <button class="seal-hit" id="openInvite" aria-label="Open wedding invitation"></button>
-    <div class="open-hint">TAP THE GOLD SEAL TO OPEN</div>
+<section id="opening" aria-label="Wedding invitation envelope">
+ <div class="scene" id="scene">
+  <div class="cover">
+   <div class="door left"><img src="assets/left-door.jpg" alt="Left side of the invitation envelope"></div>
+   <div class="door right"><img src="assets/right-door.jpg" alt="Right side of the invitation envelope"></div>
+   <img class="ribbon" id="ribbon" src="assets/gold-ribbon-seal.png" alt="Gold ribbon and wax seal">
+   <button class="seal-hit" id="openSeal" aria-label="Open wedding invitation"></button>
+   <div class="hint">TOUCH THE SEAL TO OPEN</div>
   </div>
+ </div>
 </section>
-
-<section class="inside" id="inside">
-  <div class="flower-side left"></div><div class="flower-side right"></div>
-  <main class="content">
-    <div class="eyebrow">Together with their families</div>
-    <div class="names">Selenika</div>
-    <div class="amp">&amp;</div>
-    <div class="names" style="margin-top:8px">Samith</div>
-    <div class="invite">JOYFULLY INVITE YOU TO<br>CELEBRATE THEIR WEDDING</div>
-    <div class="ornament">────── ♥ ──────</div>
-    <div class="date"><span class="side">FRIDAY</span><span class="day">18</span><span class="side">2026</span></div>
-    <div class="date-sub">th December</div>
-    <div class="details">
-      <div class="detail"><h3>PORUWA CEREMONY</h3><p>10:00 AM</p></div>
-      <div class="detail"><h3>VENUE</h3><p>The River Edge Hotel</p><p>Kaduwela, Sri Lanka</p><p><a class="map" href="https://www.google.com/maps/search/?api=1&query=The+River+Edge+Hotel+Kaduwela+Sri+Lanka" target="_blank" rel="noopener">View Location</a></p></div>
-    </div>
-    <div class="note">We would be honoured by your presence</div>
-    <div class="ornament">────── ♥ ──────</div>
-    <a class="rsvp" href="https://wa.me/94750778182?text=Hello%2C%20we%20would%20like%20to%20RSVP%20for%20Selenika%20%26%20Samith%27s%20wedding." target="_blank" rel="noopener">RSVP ON WHATSAPP</a>
-    <div class="footer">WITH LOVE · SELENIKA &amp; SAMITH · 18 DECEMBER 2026</div>
-  </main>
+<section id="invitation" aria-label="Wedding invitation details">
+ <div class="invite-card">
+  <img class="flower left" src="assets/floral-left.jpg" alt="Ivory floral decoration">
+  <img class="flower right" src="assets/floral-right.jpg" alt="Ivory floral decoration">
+  <div class="copy">
+   <div class="eyebrow">TOGETHER WITH THEIR FAMILIES</div>
+   <div class="names">Selenika<br><span class="amp">&amp;</span><br>Samith</div>
+   <div class="sub">JOYFULLY INVITE YOU TO<br>CELEBRATE THEIR WEDDING</div>
+   <div class="date"><span>FRIDAY</span><strong>18</strong><span>2026</span></div>
+   <div class="month">th December</div>
+   <div class="detail"><strong>PORUWA CEREMONY</strong><br>10:00 AM</div>
+   <div class="detail"><strong>THE RIVER EDGE HOTEL</strong><br>KADUWELA, SRI LANKA</div>
+   <a class="rsvp" href="https://wa.me/94750778182?text=We%20are%20happy%20to%20confirm%20our%20attendance%20at%20your%20wedding." target="_blank" rel="noopener">RSVP ON WHATSAPP</a>
+  </div>
+ </div>
 </section>
 <script>
-const stage=document.getElementById('stage');
-const inside=document.getElementById('inside');
-document.getElementById('openInvite').addEventListener('click',()=>{
-  if(stage.classList.contains('open')) return;
-  stage.classList.add('open');
-  window.setTimeout(()=>{
-    inside.classList.add('show');
-    inside.scrollIntoView({behavior:'smooth',block:'start'});
-  },1250);
-});
+(function(){
+ const scene=document.getElementById('scene');
+ const button=document.getElementById('openSeal');
+ const invitation=document.getElementById('invitation');
+ let opened=false;
+ button.addEventListener('click',function(event){
+  event.preventDefault();event.stopPropagation();
+  if(opened)return;opened=true;
+  button.disabled=true;
+  scene.classList.add('opening');
+  // Ribbon slides away first; the two gatefold panels open only after it clears.
+  window.setTimeout(function(){
+    invitation.classList.add('visible');
+    window.setTimeout(function(){
+      invitation.scrollIntoView({behavior:'smooth',block:'start'});
+    },150);
+  },1450);
+ });
+})();
 </script>
-</body>
-</html>
+</body></html>
